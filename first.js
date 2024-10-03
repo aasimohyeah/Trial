@@ -1,5 +1,4 @@
 const fs = require('fs');
-// console.log("GIT setup success");
 
 const data = fs.readFileSync('./dev-data/data.json', 'utf-8');
 const dataObj = JSON.parse(data);
