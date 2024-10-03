@@ -1,5 +1,8 @@
-// const fs = require('fs');
+const fs = require('fs');
 // console.log("GIT setup success");
+
+const data = fs.readFileSync('./dev-data/data.json', 'utf-8');
+const dataObj = JSON.parse(data);
 
 //SERVER
 const http = require('http');
@@ -16,6 +19,13 @@ const server = http.createServer((req, res) => {
     }
     else if(pathName === '/product'){
         res.end('This is the PRODUCT');
+    }
+    //${__dirname} not working, so using . instead
+    else if(pathName == '/api'){
+        res.writeHead(200, {
+            'Content-type': 'application/json'
+        })
+        res.end(data);
     }
     else
     {
