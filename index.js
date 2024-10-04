@@ -6,9 +6,6 @@ const url = require('url');
 //custom module
 const replaceTemplate = require('./modules/replaceTemplate');
 
-//function replacetemplate 
-
-
 const tempOverview = fs.readFileSync('./templates/template-overview.html', 'utf-8');
 const tempCard = fs.readFileSync('./templates/template-card.html', 'utf-8');
 const tempProduct = fs.readFileSync('./templates/template-product.html', 'utf-8');
