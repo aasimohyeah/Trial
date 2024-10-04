@@ -3,6 +3,8 @@ const fs = require('fs');
 //SERVER
 const http = require('http');
 const url = require('url');
+//3rd party module
+const slugify = require('slugify');
 //custom module
 const replaceTemplate = require('./modules/replaceTemplate');
 
@@ -13,6 +15,10 @@ const tempProduct = fs.readFileSync('./templates/template-product.html', 'utf-8'
 //${__dirname} not working, so using . instead
 const data = fs.readFileSync('./dev-data/data.json', 'utf-8');
 const dataObj = JSON.parse(data);
+
+//slugify demo
+//const slugs = dataObj.map(el => slugify(el.productName, {lower: true}));
+//console.log(slugs);
 
 const server = http.createServer((req, res) => {
     //res.end('Hello from the server\nGae');
